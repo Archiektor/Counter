@@ -1,5 +1,5 @@
 $whitecolor: #ffffff
-$redcolor: #40b8b8
+$yellowcolor: #7d8028
 
 @mixin btn_hover
   &:hover
@@ -9,7 +9,7 @@ $redcolor: #40b8b8
 
 @mixin btn_main
   border-radius: 5px
-  background-color: $redcolor
+  background-color: $yellowcolor
   color: $whitecolor
   font-size: 12px
   font-weight: 400
@@ -23,6 +23,10 @@ $redcolor: #40b8b8
 @mixin flex-column
   display: flex
   flex-flow: column nowrap
+
+@mixin flex-center
+  justify-content: center
+  align-items: center
 
 @mixin for-phone-only
   @media only screen and (min-width: 320px) and (max-width: 460px)
