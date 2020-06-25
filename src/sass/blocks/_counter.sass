@@ -1,0 +1,37 @@
+$bluecolor: #62dcd5
+
+.counter
+  display: grid
+  width: 35vw
+  height: 50vh
+  //background-color: #19092f
+  margin: 0 auto
+
+  &__outer-border
+    width: 100%
+    height: 100%
+    border: 3px $bluecolor solid
+    border-radius: 15px
+
+  &__inner-border
+    width: 80%
+    height: 40%
+    border: 3px $bluecolor solid
+    border-radius: 15px
+    margin: 40px auto 20px auto
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &__display
+    color: whitesmoke
+    //font: font-style font-variant font-weight font-size/line-height font-family;
+    font: normal 700 6rem/1.2 "Arial"
+
+  &__btn-area
+    width: 80%
+    height: 40%
+    margin: 0 auto
+    display: flex
+    align-items: center
+    justify-content: space-between
