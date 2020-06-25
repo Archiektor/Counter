@@ -11,25 +11,30 @@ $bluecolor: #62dcd5
     font: normal 700 1.8rem/1.6 "Calibri"
     color: $bluecolor
 
+  input
+    display: inline-block
+    height: 3rem
+    text-align: center
+    font: 700 1.2rem "Arial"
+    color: #303234
+
+    &:focus
+      outline: 2px $bluecolor solida
+
+  span
+    margin-top: 3px
+    font: normal 400 1.1rem/1.6 "Calibri"
+    color: darkred
+
   &__mod
     display: flex
     flex-flow: nowrap column
     justify-content: center
     align-items: center
 
-    input
-      display: inline-block
-      height: 3rem
-      background-color: #e2e3d6
-      text-align: center
-      font: 700 1.2rem "Arial"
-      color: #303234
+    &_error
+      border: 3px darkred solid
+      background-color: #923a3a
 
-    span
-      margin-top: 3px
-      font: normal 400 1.1rem/1.6 "Calibri"
-      color: darkred
-
-  &_error
-    border: 3px darkred solid
-    background-color: #923a3a
+      &:focus
+        outline: 2px darkred solid

@@ -25,12 +25,15 @@ const App = () => {
     const changeMaxCounter = (value: number) => {
         state[maxCounter] = value;
         setState({...state});
+        // console.log("max state", state);
     }
 
     const changeStartCounter = (value: number) => {
         state[startCounter] = value;
         state[currentCounter] = value;
         setState({...state});
+        // console.log("start state", state);
+
     }
 
     const resetCounter = () => {
