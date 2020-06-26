@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import Counter from "../counter";
 
@@ -9,6 +9,7 @@ type StateType = {
 const maxCounter = "max_Counter";
 const startCounter = "start_Counter";
 const currentCounter = "current_Counter";
+const keyToLocalstorage = "state";
 
 const App = () => {
     let [state, setState] = useState<StateType>({
@@ -16,6 +17,16 @@ const App = () => {
         [startCounter]: 0,
         [currentCounter]: 0,
     });
+
+    useEffect(() => {
+        const stateAsString = localStorage.getItem(keyToLocalstorage)
+        // console.log(stateAsString);
+        if (stateAsString !== null) {
+            const newState = JSON.parse(stateAsString!)
+            setState(newState);
+            localStorage.clear()
+        }
+    }, []);
 
     const changeCounter = (value: number) => {
         state[currentCounter] += value;
@@ -25,21 +36,23 @@ const App = () => {
     const changeMaxCounter = (value: number) => {
         state[maxCounter] = value;
         setState({...state});
-        // console.log("max state", state);
     }
 
     const changeStartCounter = (value: number) => {
         state[startCounter] = value;
         state[currentCounter] = value;
         setState({...state});
-        // console.log("start state", state);
-
     }
 
     const resetCounter = () => {
         state[currentCounter] = state[startCounter];
         setState({...state});
     }
+
+    useEffect(() => {
+        // console.log("update");
+        localStorage.setItem(keyToLocalstorage, JSON.stringify(state));
+    }, [state]);
 
     return (
         <div className="container_fluid">

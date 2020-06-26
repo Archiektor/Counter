@@ -1,5 +1,7 @@
 import React from "react";
 
+import css from "./button.module.sass";
+
 type ButtonType = {
     changeCounter?: (value: number) => void,
     disable: string,
@@ -19,7 +21,7 @@ const Button: React.FC<ButtonType> = (props) => {
             if (props.changeDisplayStatus) {
                 props.changeDisplayStatus();
             }
-        }} className={`btn btn_right ${props.disable}`}>{props.children}</button>
+        }} className={`${css.btn} ${css.btn_right} ${props.disable && css.btn_disabled}`}>{props.children}</button>
     )
 }
 
