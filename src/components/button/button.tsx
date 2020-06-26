@@ -7,11 +7,13 @@ type ButtonType = {
     disable: string,
     resetCounter?: () => void,
     changeDisplayStatus?: () => void,
+    disabled?: boolean,
 }
 
 const Button: React.FC<ButtonType> = (props) => {
     return (
-        <button onClick={() => {
+        <button disabled={props.disabled}
+            onClick={() => {
             if (props.changeCounter) {
                 props.changeCounter(1);
             }
