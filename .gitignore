@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/.idea/
 /node_modules
 /.pnp
 .pnp.js
@@ -21,3 +22,25 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+!/tsconfig.json
+!/src/react-app-env.d.ts
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea/.gitignore
+.idea/counter.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/watcherTasks.xml
+src/components/button/button.module.css
+src/components/button/button.module.css.map
+src/components/counter/counter.module.css
+src/components/counter/counter.module.css.map
+src/components/display/display.module.css
+src/components/display/display.module.css.map
+src/react-app-env.d.ts
+src/sass/blocks/_user-input.css
+src/sass/blocks/_user-input.css.map
