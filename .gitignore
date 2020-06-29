@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+/test
 
 # production
 /build
@@ -35,6 +36,8 @@ yarn-error.log*
 .idea/modules.xml
 .idea/vcs.xml
 .idea/watcherTasks.xml
+jest.config.js
+package-lock.json
 src/components/button/button.module.css
 src/components/button/button.module.css.map
 src/components/counter/counter.module.css
