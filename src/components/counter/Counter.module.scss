@@ -1,0 +1,54 @@
+@import "src/sass/variables/variables";
+
+$blueColor: #41b1b1;
+%border {
+  border: 3px $blueColor solid;
+  border-radius: 15px;
+}
+
+.frame {
+  @include makeWH(600px, 300px);
+  @extend %border;
+  @include flexDirection(column);
+  align-items: center;
+  padding: 15px;
+
+  &__inner {
+    @include makeWH(550px, 200px);
+    @extend %border;
+    @include flexCenter;
+    color: white;
+    flex-flow: column nowrap;
+  }
+
+  &__text {
+    font: 700 4rem/1.6 "GOST Common";
+
+    &_disabled {
+      color: darkred;
+    }
+  }
+
+  &__btn {
+    @include makeWH(550px, 100px);
+    @extend %border;
+    margin-top: 10px;
+    @include flexDirection(row);
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__inputBlock {
+    width: 100%;
+    margin: 15px;
+    color: $blueColor;
+    font: 500 2rem "GOST Common";
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  &__span {
+    width: 200px;
+  }
+}

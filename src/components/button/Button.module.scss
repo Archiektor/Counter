@@ -1,0 +1,12 @@
+@import "src/sass/variables/variables";
+
+.btn {
+  @include makeWH(130px, 60px);
+  background-color: #519c84;
+  color: white;
+  font: 700 2rem "Century Gothic";
+
+  &_disabled {
+    opacity: .3;
+  }
+}

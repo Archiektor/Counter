@@ -1,29 +1,21 @@
-import React from "react";
-
-import css from "./button.module.sass";
+import React from 'react';
+import s from './Button.module.scss';
 
 type ButtonType = {
-    changeCounter?: (value: number) => void,
-    disable: string,
-    resetCounter?: () => void,
-    changeDisplayStatus?: () => void,
+    onClickFn?: () => void,
     disabled?: boolean,
 }
 
-const Button: React.FC<ButtonType> = (props) => {
+const Button: React.FC<ButtonType> = ({onClickFn, disabled, ...props}) => {
+
+    let btnStyle = disabled ? `${s.btn} ${s.btn_disabled}` : `${s.btn}`
+
+    const onClickHadler = () => {
+        onClickFn && onClickFn();
+    }
+
     return (
-        <button disabled={props.disabled}
-            onClick={() => {
-            if (props.changeCounter) {
-                props.changeCounter(1);
-            }
-            if (props.resetCounter) {
-                props.resetCounter();
-            }
-            if (props.changeDisplayStatus) {
-                props.changeDisplayStatus();
-            }
-        }} className={`${css.btn} ${css.btn_right} ${props.disable && css.btn_disabled}`}>{props.children}</button>
+        <button className={btnStyle} disabled={disabled && disabled} onClick={onClickHadler} {...props}>{props.children}</button>
     )
 }
 
